@@ -17,6 +17,6 @@ module.exports = {
   reviewsByPropertyCode: (parent, { propertyCode }, { dataSources }, info) =>
     dataSources.ReviewsAPI.getReviewsByPropertyCode(propertyCode),
 
-	user: (parent, args, { dataSources }, info) =>
-		dataSources.UsersAPI.getUser(args),
+	profile: (parent, {userName}, { dataSources }, info) =>
+		dataSources.UsersAPI.getUser(userName),
 };

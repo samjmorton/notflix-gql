@@ -8,12 +8,19 @@ module.exports = gql`
     ratesByRatePlanCode(ratePlanCode: String): Rate
     reviews: [Review]
     reviewsByPropertyCode(propertyCode: String): [Review]
-		user: User
+		profile(userName: String): Profile
   }
 
-	type User {
+	type Profile {
+		email: String,
+    userName: String,
+    name: String,
+    accounts: [Account]
+	}
+
+	type Account {
+		profileImage: String,
 		name: String
-		profile: String
 	}
 
   type Mutation {
